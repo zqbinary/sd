@@ -10,13 +10,13 @@
 {literal}
 <style type="text/css">
 /*body,html { height: 100%; overflow: hidden; }*/
-.panel-icloud .panel-right iframe { height: 300px; margin-top: 15px; }
-.panel-hint{ top: 3%; }
-{if $yunqi_bg}
-.login-body{ background: url({$yunqi_bg}) no-repeat center center; }
-{else}
-.login-body{ background: url(images/login_bg_01.jpg) no-repeat center center; }
-{/if}
+/*.panel-icloud .panel-right iframe { height: 300px; margin-top: 15px; }*/
+/*.panel-hint{ top: 3%; }*/
+/*{if $yunqi_bg}*/
+/*.login-body{ background: url({$yunqi_bg}) no-repeat center center; }*/
+/*{else}*/
+/*.login-body{ background: url(images/login_bg_01.jpg) no-repeat center center; }*/
+/*{/if}*/
 
 .center-wrap .z-bd{
   width: 582px;
@@ -72,7 +72,8 @@ function get_certificate(){
 </script>
 </head>
 <body style="height: 100%;padding: 0">
-{if !$certi.certificate_id}
+<!--去掉-->
+{if false || !$certi.certificate_id}
 <!--云起激活系统面板-->
 <div class="panel-hint panel-icloud" id="panelCloud">
   <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
