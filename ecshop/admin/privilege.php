@@ -180,15 +180,6 @@ if ($_REQUEST['act'] == 'login')
         $smarty->assign('iframe_url',$iframe_url);
         $smarty->assign('now_year',date('Y'));
 
-        $yunqi_bg = getYunqiAd('ecshop_login_bg'); //ekaidian_login_bg
-        if( isset($yunqi_bg[0]['picpath']) && !empty($yunqi_bg[0]['picpath']) ){
-            $smarty->assign('yunqi_bg',$yunqi_bg[0]['picpath']);
-        }
-        $yunqi_ad = getYunqiAd('ecshop_login_link'); //ekaidian_login_link
-        if( $yunqi_ad[0]['picpath'] && $yunqi_ad[0]['link'] ){
-            $smarty->assign('yunqi_ad_link',$yunqi_ad[0]['link']);
-            $smarty->assign('yunqi_ad_url',$yunqi_ad[0]['picpath']);
-        }
 
         $smarty->display('login.htm');
     }

@@ -1394,7 +1394,6 @@ em, cite, th {
   padding-bottom: 42px;
   padding-top: 80px;
   height: 400px;
-  background: url(../images/yunqi_bg_02.png) no-repeat bottom center;
 }
 .z-bd .login-panel {
   position: absolute;
@@ -1445,10 +1444,8 @@ em, cite, th {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0e7df', endColorstr='#ffffff',GradientType=1 ); /* ie6-9 */
 }
 .z-bd .login-cloud.ecshop .btn-tab{
-  background: url(../images/ecshop-n.png) no-repeat center center;
 }
 .z-bd .login-cloud.ecshop .btn-tab:hover{
-  background: url(../images/ecshop-h.png) no-repeat center center;
 }
 .login-panel .panel-hd{
   padding-bottom: 10px;
