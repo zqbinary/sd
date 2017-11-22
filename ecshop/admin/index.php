@@ -58,18 +58,18 @@ elseif ($_REQUEST['act'] == 'top')
     $smarty->assign('send_mail_on',$_CFG['send_mail_on']);
     $smarty->assign('nav_list', $lst);
     $smarty->assign('admin_id', $_SESSION['admin_id']);
-    if($certificate['certificate_id']){
-        $single_page = 'active';
-        $certificate['use_yunqi_authority'] and $single_page = 'detail';
-        $authority_url = $cert->get_authority_url($single_page);
-        $single_url = $cert->get_authority_url('single');
-        $smarty->assign('authority_url',$authority_url);
-        $smarty->assign('single_url',$single_url);
-        $smarty->assign('authorization',$_SESSION['authorization']);//是否授权
-        $smarty->assign('authorize_name',$_SESSION['authorize_name']);//授权名称
-    }
+//    if($certificate['certificate_id']){
+//        $single_page = 'active';
+//        $certificate['use_yunqi_authority'] and $single_page = 'detail';
+//        $authority_url = $cert->get_authority_url($single_page);
+//        $single_url = $cert->get_authority_url('single');
+//        $smarty->assign('authority_url',$authority_url);
+//        $smarty->assign('single_url',$single_url);
+//        $smarty->assign('authorization',$_SESSION['authorization']);//是否授权
+//        $smarty->assign('authorize_name',$_SESSION['authorize_name']);//授权名称
+//    }
     $smarty->assign('http_host',$_SERVER['HTTP_HOST']);
-    $smarty->assign('certi', $certificate);
+//    $smarty->assign('certi', $certificate);
     $smarty->display('top.htm');
 }
 
