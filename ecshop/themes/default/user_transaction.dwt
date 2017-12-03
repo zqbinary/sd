@@ -52,6 +52,14 @@
       <div class="blank"></div>
      <form name="formEdit" action="user.php" method="post" onSubmit="return userEdit()">
       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+              <td width="28%" align="right" bgcolor="#FFFFFF">订单生成后通知邮箱：</td>
+              <td width="72%" align="left" bgcolor="#FFFFFF">
+                  <textarea  name="email_order_notify" rows='10' cols='30'> {$profile.email_order_notify}</textarea>
+                  <br>
+                  <span> 用换行隔开</span>
+              <td>
+          </tr>
                 <tr>
                   <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.birthday}： </td>
                   <td width="72%" align="left" bgcolor="#FFFFFF"> {html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday} </td>

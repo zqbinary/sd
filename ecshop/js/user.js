@@ -12,6 +12,17 @@ function userEdit()
   var passwd_answer = frm.elements['passwd_answer'] ? Utils.trim(frm.elements['passwd_answer'].value) : '';
   var sel_question =  frm.elements['sel_question'] ? Utils.trim(frm.elements['sel_question'].value) : '';
 
+  var user_emails = frm.elements['email_order_notify'].value;
+  var user_emails_arr = user_emails.split('\n');
+  if(user_emails_arr && user_emails_arr.length) {
+      user_emails_arr.forEach(function (value) {
+          if ( ! (Utils.isEmail(value)))
+          {
+              msg += '请填写正确的订单通知邮箱:' + value + '\n';
+          }
+      })
+  }
+
   if (email.length == 0)
   {
     msg += email_empty + '\n';
