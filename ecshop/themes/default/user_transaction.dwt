@@ -55,7 +55,7 @@
           <tr>
               <td width="28%" align="right" bgcolor="#FFFFFF">订单生成后通知邮箱：</td>
               <td width="72%" align="left" bgcolor="#FFFFFF">
-                  <textarea  name="email_order_notify" rows='10' cols='30'> {$profile.email_order_notify}</textarea>
+                  <textarea  name="email_order_notify" rows='10' cols='30'>{$profile.email_order_notify}</textarea>
                   <br>
                   <span> 用换行隔开</span>
               <td>
