@@ -2917,6 +2917,32 @@ function create_env($arr,$file='appserver')
     }
 }
 
+function d(...$arguments)
+{
 
+    echo '<pre>';
+    foreach ($arguments as $key=>$argument) {
+        print_r('params: '.$key);
+        echo '<br>';
+        print_r($argument);
+        echo '<hr>';
 
+    }
+    echo '</pre>';
+
+}
+
+function dd(...$arguments)
+{
+    echo '<pre>';
+    foreach ($arguments as $key=>$argument) {
+        print_r('params: '.$key);
+        echo '<br>';
+        print_r($argument);
+        echo '<hr>';
+
+    }
+    echo '</pre>';
+    die;
+}
 ?>

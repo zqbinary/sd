@@ -33,9 +33,33 @@ $not_login_arr =
 array('sms_get_password','ajax_validate_sms','ajax_validate_vcode','login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
 
 /* 显示页面的action列表 */
-$ui_arr = array('sms_get_password','register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
-'message_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
-'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer','delivery_info');
+$ui_arr = array('sms_get_password',
+    'register',
+    'login',
+    'profile',//个人资料页面
+    'order_list',
+    'order_detail',
+    'address_list',
+    'collection_list',
+    'message_list',
+    'tag_list',
+    'get_password',
+    'reset_password',
+    'booking_list',
+    'add_booking',
+    'account_raply',
+    'account_deposit',
+    'account_log',
+    'account_detail',
+    'act_account',
+    'pay',
+    'default',
+    'bonus',
+    'group_buy',
+    'group_buy_detail', 'affiliate', 'comment_list',
+    'validate_email','track_packages', 'transform_points',
+    'qpassword_name', 'get_passwd_question', 'check_answer','delivery_info');
+
 
 /* 未登录处理 */
 if (empty($_SESSION['user_id']))
@@ -516,6 +540,8 @@ elseif ($action == 'profile')
     }
 
     $smarty->assign('extend_info_list', $extend_info_list);
+    /*生成订单后通知的用户*/
+
 
     /* 密码提示问题 */
     $smarty->assign('passwd_questions', $_LANG['passwd_questions']);
@@ -539,6 +565,7 @@ elseif ($action == 'act_edit_profile')
     $other['mobile_phone'] = $mobile_phone = isset($_POST['extend_field5']) ? trim($_POST['extend_field5']) : '';
     $sel_question = empty($_POST['sel_question']) ? '' : compile_str($_POST['sel_question']);
     $passwd_answer = isset($_POST['passwd_answer']) ? compile_str(trim($_POST['passwd_answer'])) : '';
+    $email_order_notify = isset($_POST['email_order_notify']) ? trim($_POST['email_order_notify']) : '';
 
     /* 更新用户扩展字段的数据 */
     $sql = 'SELECT id FROM ' . $ecs->table('reg_fields') . ' WHERE type = 0 AND display = 1 ORDER BY dis_order, id';   //读出所有扩展字段的id
@@ -562,6 +589,7 @@ elseif ($action == 'act_edit_profile')
             $db->query($sql);
         }
     }
+
 
     /* 写入密码提示问题和答案 */
     if (!empty($passwd_answer) && !empty($sel_question))
@@ -601,9 +629,9 @@ elseif ($action == 'act_edit_profile')
         'email'    => isset($_POST['email']) ? trim($_POST['email']) : '',
         'sex'      => isset($_POST['sex'])   ? intval($_POST['sex']) : 0,
         'birthday' => $birthday,
-        'other'    => isset($other) ? $other : array()
-        );
-
+        'other'    => isset($other) ? $other : array(),
+        'email_order_notify'=>$email_order_notify,
+    );
 
     if (edit_profile($profile))
     {

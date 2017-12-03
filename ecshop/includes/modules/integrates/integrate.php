@@ -58,6 +58,7 @@ class integrate
 
     /* 会员邮箱的字段名 */
     var $field_email    = '';
+    var $field_email_order_notify    = '';
 
     /* 会员性别 */
     var $field_gender = '';
@@ -306,6 +307,10 @@ class integrate
         if (isset($cfg['gender']) && $this->field_gender != 'NULL')
         {
             $values[] = $this->field_gender . "='" . $cfg['gender'] . "'";
+        }
+        if (isset($cfg['email_order_notify']) && $this->field_email_order_notify != 'NULL')
+        {
+            $values[] = $this->field_email_order_notify . "='" . $cfg['email_order_notify'] . "'";
         }
 
         if ((!empty($cfg['bday'])) && $this->field_bday != 'NULL')

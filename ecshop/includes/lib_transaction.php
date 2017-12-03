@@ -46,11 +46,27 @@ function edit_profile($profile)
         if (!is_email($profile['email']))
         {
             $GLOBALS['err']->add(sprintf($GLOBALS['_LANG']['email_invalid'], $profile['email']));
-
             return false;
         }
         $cfg['email'] = $profile['email'];
     }
+    if (!empty($profile['email_order_notify']))
+    {
+        $user_emails_arr = explode(PHP_EOL, $profile['email_order_notify']);
+        foreach ($user_emails_arr as &$email_item) {
+            $email_item = trim($email_item);
+            if (!is_email($email_item))
+            {
+                $GLOBALS['err']->add(sprintf($GLOBALS['_LANG']['email_invalid'], $email_item));
+                $GLOBALS['err']->show();
+
+                return false;
+            }
+        }
+        $cfg['email_order_notify'] = implode(PHP_EOL, $user_emails_arr);
+
+    }
+
     if (!empty($profile['birthday']))
     {
         $cfg['bday'] = $profile['birthday'];
@@ -90,6 +106,11 @@ function edit_profile($profile)
     {
         $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('users'), $profile['other'], 'UPDATE', "user_id = '$profile[user_id]'");
     }
+    /* 修改在其他资料 */
+    if (!empty($profile['email_order_notify']))
+    {
+        $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('users'), $profile['email_order_notify'], 'UPDATE', "user_id = '$profile[user_id]'");
+    }
 
     return true;
 }
@@ -112,6 +133,7 @@ function get_profile($user_id)
     $infos = array();
     $sql  = "SELECT user_name, birthday, sex, question, answer, rank_points, pay_points,user_money, user_rank,".
              " msn, qq, office_phone, home_phone, mobile_phone, passwd_question, passwd_answer ".
+            " ,email_order_notify ".
            "FROM " .$GLOBALS['ecs']->table('users') . " WHERE user_id = '$user_id'";
     $infos = $GLOBALS['db']->getRow($sql);
     $infos['user_name'] = addslashes($infos['user_name']);
@@ -178,6 +200,8 @@ function get_profile($user_id)
     $info['mobile_phone'] = $infos['mobile_phone'];
     $info['passwd_question'] = $infos['passwd_question'];
     $info['passwd_answer'] = $infos['passwd_answer'];
+
+    $info['email_order_notify'] = $infos['email_order_notify'];
 
     return $info;
 }
