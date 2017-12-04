@@ -752,6 +752,55 @@ elseif ($_REQUEST['step'] == 'checkout')
     /* 保存 session */
     $_SESSION['flow_order'] = $order;
 }
+//生成审批单
+elseif ($_REQUEST['step'] == 'make_budget') {
+    $flow_type = isset($_SESSION['flow_type']) ? intval($_SESSION['flow_type']) : CART_GENERAL_GOODS;
+    $date = date('Y-m-d H:i:s',time());
+    $cart_goods = cart_goods($flow_type); // 取得商品列表，计算合计
+    //zq todo 添加公司名等
+    $goods_order_data = $cart_goods;
+    $filename = '公司xxx'.$date.'-审批单';
+
+    header("Content-type: application/vnd.ms-excel; charset=utf-8");
+    header("Content-Disposition: attachment; filename=$filename.xls");
+
+    $data .= "序号\t商品名\t数量\t属性\t";
+    $data .= "\n";
+    $content_arr = [];
+    foreach ($goods_order_data AS $k => $row)
+    {
+        $order_by = $k + 1;
+
+        $goods_tmp = [
+            $order_by,
+            $row['goods_name'],
+            $row['goods_number'],
+            $row['goods_attr'],
+
+        ];
+        $content_arr[$order_by] = $goods_tmp;
+
+    }
+    foreach ($content_arr as $content_item_first) {
+        foreach ($content_item_first as $content_item_second) {
+            $data .= trim($content_item_second) . "\t";
+        }
+        $data .="\n";
+    }
+    die($data);
+
+    if (EC_CHARSET == 'utf-8')
+    {
+        echo ecs_iconv(EC_CHARSET, 'GB2312', $data);
+    }
+    else
+    {
+        echo $data;
+    }
+    exit;
+
+}
+
 elseif ($_REQUEST['step'] == 'select_shipping')
 {
     /*------------------------------------------------------ */

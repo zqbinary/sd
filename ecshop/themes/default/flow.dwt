@@ -299,8 +299,6 @@
   </div>
   </div>
   <!-- {/if} -->
-
-
         <!-- {if $step eq "consignee"} -->
         <!-- 开始收货人信息填写界面 -->
         {insert_scripts files='region.js,utils.js'}
@@ -375,6 +373,7 @@
               <td bgcolor="#ffffff" align="right">{$goods.formated_subtotal}</td>
             </tr>
             <!-- {/foreach} -->
+
             <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
             <tr>
               <td bgcolor="#ffffff" colspan="7">
@@ -382,9 +381,13 @@
               {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}-->
               </td>
             </tr>
+
             <!-- {/if} -->
           </table>
       </div>
+            <br>
+            <a href="flow.php?step=make_budget" style="color:red;float:right"> 生成审批单 </a>
+            <br>
       <div class="blank"></div>
       <div class="flowBox">
       <h6><span>{$lang.consignee_info}</span><a href="flow.php?step=consignee" class="f6">{$lang.modify}</a></h6>
@@ -497,7 +500,7 @@
         <input name = "payment" type="radio" value = "-1" checked="checked"  style="display:none"/>
     <!--{/if}-->
     <div class="blank"></div>
-          <!-- {if $pack_list} 是否有包装 -->
+          <!-- {if false && $pack_list} 是否有包装 -->
           <div class="flowBox">
           <h6><span>{$lang.goods_package}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="packTable">
@@ -536,7 +539,7 @@
              <div class="blank"></div>
           <!-- {/if} 是否使用包装 -->
 
-          <!-- {if $card_list} 是否有贺卡 -->
+          <!-- {if false && $card_list} 是否有贺卡 -->
           <div class="flowBox">
           <h6><span>{$lang.goods_card}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="cardTable">
