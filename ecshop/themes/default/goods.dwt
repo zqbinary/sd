@@ -394,9 +394,6 @@ function reg(str){
     <!-- {/if} -->
     <!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/bought_note_guide.lbi" --> {insert_scripts files='transport.js,utils.js'}
     <div id="ECS_BOUGHT">{* ECSHOP 提醒您：动态载入bought_notes.lbi，显示当前商品的购买记录 *}{insert name='bought_notes' id=$id}</div>
-    <!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/comments.lbi" --> {insert_scripts files='transport.js,utils.js'}
-    <div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=$type id=$id}</div>
-    <!-- #EndLibraryItem --> <!-- TemplateEndEditable --> </div>
   <!--right end-->
 </div>
 <div class="blank5"></div>
