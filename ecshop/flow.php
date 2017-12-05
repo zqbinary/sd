@@ -1438,8 +1438,8 @@ elseif ($_REQUEST['step'] == 'done')
     $_POST['postscript'] = isset($_POST['postscript']) ? compile_str($_POST['postscript']) : '';
 
     $order = array(
-        'shipping_id'     => intval($_POST['shipping']),
-        'pay_id'          => intval($_POST['payment']),
+        'shipping_id'     => SHIPPING_ID_DEFAULT,
+        'pay_id'          => PAY_ID_DEFAULT,
         'pack_id'         => isset($_POST['pack']) ? intval($_POST['pack']) : 0,
         'card_id'         => isset($_POST['card']) ? intval($_POST['card']) : 0,
         'card_message'    => trim($_POST['card_message']),
@@ -1845,36 +1845,6 @@ elseif ($_REQUEST['step'] == 'done')
     $order['log_id'] = insert_pay_log($new_order_id, $order['order_amount'], PAY_ORDER);
 
     /* 取得支付信息，生成支付代码 */
-    if ($order['order_amount'] > 0)
-    {
-        $payment = payment_info($order['pay_id']);
-
-        include_once('includes/modules/payment/' . $payment['pay_code'] . '.php');
-        $pay_obj    = new $payment['pay_code'];
-//为天宫支付传递商品名
-    $sql = "SELECT goods_name FROM " . $ecs->table('order_goods') . " WHERE order_id =" . $order['order_id'];
-    $res = $db->query($sql);
-    while ($aaa[] = $db->fetchRow($res))
-    {
-        $bbb = array_values($aaa);
-    }
-    foreach($bbb as $v)
-    {
-        $ccc[] = $v['goods_name'];
-    }
-    $goods_name = implode(',',$ccc);
-    $order['goods_name'] = $goods_name;
-
-//天工结束
-
-        //云起收银
-        $payment['pay_code']='yunqi' and  $order['yunqi_paymethod'] = $_POST['yunqi_paymethod'];
-        $pay_online = $pay_obj->get_code($order, unserialize_config($payment['pay_config']));
-
-        $order['pay_desc'] = $payment['pay_desc'];
-
-        $smarty->assign('pay_online', $pay_online);
-    }
     if(!empty($order['shipping_name']))
     {
         $order['shipping_name']=trim(stripcslashes($order['shipping_name']));

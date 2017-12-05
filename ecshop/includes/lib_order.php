@@ -1789,11 +1789,11 @@ function last_shipping_and_payment()
             " WHERE user_id = '$_SESSION[user_id]' " .
             " ORDER BY order_id DESC LIMIT 1";
     $row = $GLOBALS['db']->getRow($sql);
-
+    //去掉配送和支付, 暂时用个默认的
     if (empty($row))
     {
         /* 如果获得是一个空数组，则返回默认值 */
-        $row = array('shipping_id' => 0, 'pay_id' => 0);
+        $row = array('shipping_id' => SHIPPING_ID_DEFAULT, 'pay_id' => PAY_ID_DEFAULT);
     }
 
     return $row;

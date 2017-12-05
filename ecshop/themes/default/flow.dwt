@@ -385,121 +385,9 @@
             <!-- {/if} -->
           </table>
       </div>
-            <br>
-            <a href="flow.php?step=make_budget" style="color:red;float:right"> 生成审批单 </a>
-            <br>
-      <div class="blank"></div>
-      <div class="flowBox">
-      <h6><span>{$lang.consignee_info}</span><a href="flow.php?step=consignee" class="f6">{$lang.modify}</a></h6>
-      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-            <tr>
-              <td bgcolor="#ffffff">{$lang.consignee_name}:</td>
-              <td bgcolor="#ffffff">{$consignee.consignee|escape}</td>
-              <td bgcolor="#ffffff">{$lang.email_address}:</td>
-              <td bgcolor="#ffffff">{$consignee.email|escape}</td>
-            </tr>
-            <!-- {if $total.real_goods_count gt 0} -->
-            <tr>
-              <td bgcolor="#ffffff">{$lang.detailed_address}:</td>
-              <td bgcolor="#ffffff">{$consignee.address|escape} </td>
-              <td bgcolor="#ffffff">{$lang.postalcode}:</td>
-              <td bgcolor="#ffffff">{$consignee.zipcode|escape}</td>
-            </tr>
-            <!-- {/if} -->
-            <tr>
-              <td bgcolor="#ffffff">{$lang.phone}:</td>
-              <td bgcolor="#ffffff">{$consignee.tel} </td>
-              <td bgcolor="#ffffff">{$lang.backup_phone}:</td>
-              <td bgcolor="#ffffff">{$consignee.mobile|escape}</td>
-            </tr>
-          </table>
-      </div>
-     <div class="blank"></div>
-    <!--{if $total.real_goods_count neq 0}-->
-    <div class="flowBox">
-    <h6><span>{$lang.shipping_method}</span></h6>
-    <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="shippingTable">
-            <tr>
-              <th bgcolor="#ffffff" width="5%">&nbsp;</th>
-              <th bgcolor="#ffffff" width="25%">{$lang.name}</th>
-              <th bgcolor="#ffffff">{$lang.describe}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.fee}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.free_money}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.insure_fee}</th>
-            </tr>
-            <!-- {foreach from=$shipping_list item=shipping} 循环配送方式 -->
-            <tr>
-              <td bgcolor="#ffffff" valign="top"><input name="shipping" type="radio" value="{$shipping.shipping_id}" {if $order.shipping_id eq $shipping.shipping_id}checked="true"{/if} supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onclick="selectShipping(this)" />
-              </td>
-              <td bgcolor="#ffffff" valign="top"><strong>{$shipping.shipping_name}</strong></td>
-              <td bgcolor="#ffffff" valign="top">{$shipping.shipping_desc}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.format_shipping_fee}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.free_money}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{if $shipping.insure neq 0}{$shipping.insure_formated}{else}{$lang.not_support_insure}{/if}</td>
-            </tr>
-            <!-- {/foreach} 循环配送方式 -->
-            <tr>
-              <td colspan="6" bgcolor="#ffffff" align="right"><label for="ECS_NEEDINSURE">
-                <input name="need_insure" id="ECS_NEEDINSURE" type="checkbox"  onclick="selectInsure(this.checked)" value="1" {if $order.need_insure}checked="true"{/if} {if $insure_disabled}disabled="true"{/if}  />
-                {$lang.need_insure} </label></td>
-            </tr>
-          </table>
-    </div>
-    <div class="blank"></div>
-        <!--{else}-->
-        <input name = "shipping" type="radio" value = "-1" checked="checked"  style="display:none"/>
-        <!--{/if}-->
-    <!--{if $is_exchange_goods neq 1 || $total.real_goods_count neq 0}-->
-    <div class="flowBox">
-    <h6><span>{$lang.payment_method}</span></h6>
-    <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="paymentTable">
-            <tr>
-              <th width="5%" bgcolor="#ffffff">&nbsp;</th>
-              <th width="20%" bgcolor="#ffffff">{$lang.name}</th>
-              <th bgcolor="#ffffff">{$lang.describe}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.pay_fee}</th>
-            </tr>
-            <!-- {foreach from=$payment_list item=payment} -->
-            <!-- 循环支付方式 -->
-            {if $payment.pay_code!='yunqi'}
-            <tr>
-              <td valign="top" bgcolor="#ffffff"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td valign="top" bgcolor="#ffffff"><strong>{$payment.pay_name}</strong></td>
-              <td valign="top" bgcolor="#ffffff">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
-            </tr>
-            {else}
-            <tr>
-              <td rowspan=2 valign="middle" bgcolor="#ffffff">
-                <input type="radio" id="yunqi_payment" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td class="list-tit" valign="top" bgcolor="#ffffff">
-                <strong>{$payment.pay_name} <i style="display:inline-block;width: 70px ;text-align: center" id="payMethod">（支付宝）</i></strong>
-                
-              </td>
-              <td valign="top" bgcolor="#ffffff">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
-            </tr>
-            <tr>
-              <td align="left" bgcolor="#ffffff" valign="top" colspan=3>
-
-                  <span class="item">
-                    <input type="radio" id="alipay" name="yunqi_paymethod" value="alipay" checked onclick="checkIpt(this);">
-                    <label for="paybal" class="alipay-image"></label>
-                  </span>
-                  <span class="item">
-                    <input type="radio" id="wxpay" name="yunqi_paymethod" value="wxpay" onclick="checkIpt(this);">
-                    <label for="wechat" class="wechat-image"></label>
-                  </span>
-              </td>
-            </tr>
-            {/if}
-            <!-- {/foreach} 循环支付方式 -->
-          </table>
-    </div>
-    <!--{else}-->
-        <input name = "payment" type="radio" value = "-1" checked="checked"  style="display:none"/>
-    <!--{/if}-->
-    <div class="blank"></div>
+        <br>
+        <a href="flow.php?step=make_budget" style="color:red;float:right"> 生成审批单 </a>
+        <br>
           <!-- {if false && $pack_list} 是否有包装 -->
           <div class="flowBox">
           <h6><span>{$lang.goods_package}</span></h6>
@@ -675,7 +563,8 @@
           <table width="99%" align="center" border="0" cellpadding="15" cellspacing="0" bgcolor="#fff" style="border:1px solid #ddd; margin:20px auto;" >
             <tr>
               <td align="center" bgcolor="#FFFFFF">
-              <!--{if $order.shipping_name}-->{$lang.select_shipping}: <strong>{$order.shipping_name}</strong>，<!--{/if}-->{$lang.select_payment}: <strong>{$order.pay_name}</strong>。{$lang.order_amount}: <strong>{$total.amount_formated}</strong>
+                  {*zq todo 这里需要修饰一下*}
+                  参考价为: <strong>{$total.amount_formated}</strong>
               </td>
             </tr>
             <tr>
