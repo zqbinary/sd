@@ -77,6 +77,10 @@ define('OS_SPLITING_PART',          6); // 部分分单
 define('PAY_ORDER',                 0); // 订单支付
 define('PAY_SURPLUS',               1); // 会员预付款
 
+//不需要的功能,所以给默认值
+define('PAY_ID_DEFAULT', 1);
+define('SHIPPING_ID_DEFAULT', 1);
+
 /* 配送状态 */
 define('SS_UNSHIPPED',              0); // 未发货
 define('SS_SHIPPED',                1); // 已发货
