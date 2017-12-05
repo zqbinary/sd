@@ -15,7 +15,7 @@
 
 $_LANG['shop_guide'] = '开店向导';
 $_LANG['set_navigator'] = '设置导航栏';
-$_LANG['about'] = '关于 ECSHOP';
+$_LANG['about'] = '关于';
 $_LANG['preview'] = '查看网店';
 $_LANG['menu'] = '菜单';
 $_LANG['help'] = '帮助';

@@ -330,17 +330,7 @@ a {
     font: 14px/40px 'Microsoft Yahei';
     color: #fff;
 }
-/*云起激活页面*/
-.ecshop-logo{
-  width: 900px;
-  height: 65px;
-  margin: 0 auto;
-  padding-top: 70px;
-}
-.ecshop-logo img{
-  width: 230px;
-  height: 65px;
-}
+
 .panel-hint {
     position: fixed;
     top: 20%;
