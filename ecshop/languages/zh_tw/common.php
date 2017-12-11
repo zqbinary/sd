@@ -553,7 +553,7 @@ $_LANG['email_checked'] = '郵件已經被確認！';
 $_LANG['hash_wrong'] = '驗證串錯誤！請核對驗證串或輸入email地址重新發送驗證串！';
 $_LANG['email_canceled'] = '郵件已經被退定！';
 $_LANG['goods_click_count'] = '商品點擊數';
-$_LANG['p_y']['link_start'] = '<a href="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_start'] = '';
 $_LANG['p_y']['link_p'] = 'Powe';
 $_LANG['p_y']['link_r'] = 'red&nbsp;';
 $_LANG['p_y']['link_b'] = 'by&nbsp;';
