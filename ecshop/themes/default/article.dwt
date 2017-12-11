@@ -48,7 +48,7 @@
     <!-- {/if} -->
     <!-- #EndLibraryItem --> <!-- TemplateEndEditable --> <!-- TemplateBeginEditable name="左边广告区域（宽200px）" --> <!-- TemplateEndEditable -->
     <!--AD end-->
-    <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem --> </div>
+  </div>
   <!--left end-->
   <!--right start-->
   <div class="AreaR">
