@@ -722,9 +722,9 @@ position:absolute; top:0px; right:0px;}
 /*首页商品*/
 .index-body{background: #F5F5F5; margin-top: 40px;}
 .index-body .body-goods .goods-title{font-size: 24px; line-height: 30px; padding: 30px 0 15px; color: #363636;}
-.goods-wrap{height: 555px;}
-.goods-wrap .goods-leftad{width: 230px; height: 555px; float: left;}
-.goods-wrap .goods-right{width: 970px; height: 555px;float: left;}
+.goods-wrap{height: 255px;}
+.goods-wrap .goods-leftad{width: 230px; height: 255px; float: left;}
+.goods-wrap .goods-right{width: 970px; height: 255px;float: left;}
 .goods-wrap .all_ms{border:none;}
 .indexpage .goods-wrap .goodsItem{width: 230px;height: 270px; padding: 0; background: #fff; margin: 0 0 12px 12px; display: block;}
 .indexpage .goods-wrap .goodsItem .img-box{width:230px; height: 180px;display: -webkit-box;     display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
@@ -732,7 +732,7 @@ position:absolute; top:0px; right:0px;}
 .indexpage .goods-wrap .goodsItem .goods-brief{font-size: 14px; color: #363636;line-height: 180%;}
 .indexpage .goods-wrap .goodsItem .gos-title{font-size: 12px; color: #989898;}
 .indexpage .goods-wrap .goodsItem  .shop_s b{color: #ce0000; font-size: 14px;}
-.indexpage .goods-wrap.hot-goods{width: 1200px; height: 370px; }
+.indexpage .goods-wrap.hot-goods{width: 1200px; height: 255px; }
 .indexpage .goods-wrap.hot-goods .goodsItem{margin: 0 12px 0 0;}
 .indexpage .goods-wrap.hot-goods .goodsItem:nth-child(5n){margin: 0;}
 /*底部*/
