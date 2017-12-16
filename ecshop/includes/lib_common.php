@@ -625,7 +625,8 @@ function load_config()
     {
         $arr = $data;
     }
-
+    //zqbinary 看起来像私有参数
+    $arr['use_storage'] = 0;//不使用库存
     return $arr;
 }
 
