@@ -114,15 +114,19 @@ function reg(str){
             </li>
             </li>
             <li class="clearfix">
-              <dd>
-                <!-- {if $cfg.show_marketprice} 市场价格-->
-                <strong>{$lang.market_price}</strong><font class="market">{$goods.market_price}</font> </dd>
-              <!-- {/if} -->
-              <!--本店售价-->
-              <dd><strong>{$lang.shop_price}</strong><font class="shop" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font> </dd>
-              <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
-              <dd><strong>{$rank_price.rank_name}：</strong><font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font> </dd>
-              <!--{/foreach}-->
+              {if false}
+                <dd>
+                  <!-- {if $cfg.show_marketprice} 市场价格-->
+                  <strong>{$lang.market_price}</strong><font class="market">{$goods.market_price}</font>
+                </dd>
+                <!-- {/if} -->
+                <!--本店售价-->
+                <dd><strong>{$lang.shop_price}</strong><font class="shop" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font> </dd>
+                <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
+                <dd><strong>{$rank_price.rank_name}：</strong><font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font> </dd>
+                <!--{/foreach}-->
+              {/if}
+
             </li>
             <!--{if $volume_price_list } -->
             <li class="padd"> <font class="f1">{$lang.volume_price}</font><br />
