@@ -111,11 +111,6 @@ function reg(str){
                 <strong>{$lang.goods_brand}</strong><a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a>
                 <!--{/if}-->
               </dd>
-              <dd class="ddR">
-                <!-- {if $cfg.show_goodsweight} 商品重量-->
-                <strong>{$lang.goods_weight}</strong>{$goods.goods_weight}
-                <!-- {/if} -->
-              </dd>
             </li>
             </li>
             <li class="clearfix">
