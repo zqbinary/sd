@@ -88,7 +88,7 @@
               <td align="right" bgcolor="#ffffff">{$goods.goods_price}</td>
               <td align="right" bgcolor="#ffffff">
                 <!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
-                <input type="text" name="goods_number[{$goods.rec_id}]" id="goods_number_{$goods.rec_id}" value="{$goods.goods_number}" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)"/>
+                <input type="text" name="goods_number[{$goods.rec_id}]" id="goods_number_{$goods.rec_id}" value="{$goods.goods_number}" size="4" class="inputBg" style="text-align:center " onblur="formSubmit()""/>
                 <!-- {else} -->
                 {$goods.goods_number}
                 <!-- {/if} -->
@@ -110,7 +110,6 @@
               </td>
               <td align="right" bgcolor="#ffffff">
                 <input type="button" value="{$lang.clear_cart}" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" />
-                <input name="submit" type="submit" class="bnt_blue_1" value="{$lang.update_cart}" />
               </td>
             </tr>
           </table>
@@ -804,6 +803,11 @@ function checkIpt(item){
     method.innerHTML = '支付宝';
   }
   document.getElementById('yunqi_payment').click();
+}
+//直接就提交更新了
+function formSubmit()
+{
+    document.getElementById("formCart").submit();
 }
 </script>
 </html>
