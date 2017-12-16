@@ -13,8 +13,8 @@
  * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
-$_LANG['app_name'] = 'ECSHOP';
-$_LANG['cp_home'] = 'ECSHOP 管理中心';
+$_LANG['app_name'] = '晟达通';
+$_LANG['cp_home'] = '晟达通-管理中心';
 $_LANG['copyright'] = '版權所有 &copy; 2005- '. date('Y') .' 上海商派軟件有限公司，並保留所有權利。';
 $_LANG['query_info'] = '共執行 %d 個查詢，用時 %s 秒';
 $_LANG['memory_info'] = '，內存佔用 %0.3f MB';
