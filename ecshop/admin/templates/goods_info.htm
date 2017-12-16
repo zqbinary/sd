@@ -102,7 +102,7 @@
             {$lang.require_field}</td>
           </tr>
           {if $user_rank_list}
-          <tr>
+          <tr hidden>
             <td class="label"><a href="javascript:showNotice('noticeUserPrice');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a>{$lang.lab_user_price}</td>
             <td>
               {foreach from=$user_rank_list item=user_rank}
@@ -116,7 +116,7 @@
           {/if}
 
           <!--鍟嗗搧浼樻儬浠锋牸-->
-          <tr>
+          <tr hidden>
             <td class="label"><a href="javascript:showNotice('volumePrice');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a>{$lang.lab_volume_price}</td>
             <td>
               <table width="100%" id="tbody-volume" align="center">
@@ -145,32 +145,32 @@
               <input type="button" value="{$lang.integral_market_price}" onclick="integral_market_price()" />
             </td>
           </tr>
-          <tr>
+          <tr hidden>
             <td class="label">{$lang.lab_virtual_sales}</td>
             <td><input type="text" name="virtual_sales" value="{$goods.virtual_sales}" size="20" />
             </td>
           </tr>
-          <tr>
+          <tr hidden>
             <td class="label"><a href="javascript:showNotice('giveIntegral');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a> {$lang.lab_give_integral}</td>
             <td><input type="text" name="give_integral" value="{$goods.give_integral}" size="20" />
             <br /><span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="giveIntegral">{$lang.notice_give_integral}</span></td>
           </tr>
-          <tr>
+          <tr hidden>
             <td class="label"><a href="javascript:showNotice('rankIntegral');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a> {$lang.lab_rank_integral}</td>
             <td><input type="text" name="rank_integral" value="{$goods.rank_integral}" size="20" />
             <br /><span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="rankIntegral">{$lang.notice_rank_integral}</span></td>
           </tr>
-          <tr>
+          <tr hidden>
             <td class="label"><a href="javascript:showNotice('noticPoints');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a> {$lang.lab_integral}</td>
             <td><input type="text" name="integral" value="{$goods.integral}" size="20" onblur="parseint_integral()";/>
               <br /><span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticPoints">{$lang.notice_integral}</span>
             </td>
           </tr>
-          <tr>
+          <tr hidden>
             <td class="label"><label for="is_promote"><input type="checkbox" id="is_promote" name="is_promote" value="1" {if $goods.is_promote}checked="checked"{/if} onclick="handlePromote(this.checked);" /> {$lang.lab_promote_price}</label></td>
             <td id="promote_3"><input type="text" id="promote_1" name="promote_price" value="{$goods.promote_price}" size="20" /></td>
           </tr>
-          <tr id="promote_4">
+          <tr id="promote_4" hidden>
             <td class="label" id="promote_5">{$lang.lab_promote_date}</td>
             <td id="promote_6">
               <input name="promote_start_date" type="text" id="promote_start_date" size="12" value='{$goods.promote_start_date}' readonly="readonly" /><input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('promote_start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/> - <input name="promote_end_date" type="text" id="promote_end_date" size="12" value='{$goods.promote_end_date}' readonly="readonly" /><input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('promote_end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="{$lang.btn_select}" class="button"/>
