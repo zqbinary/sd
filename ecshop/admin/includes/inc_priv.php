@@ -161,12 +161,18 @@ if (!defined('IN_ECS'))
     $purview['logistic_tracking']    = 'logistic_tracking';
 
 // 移动版管理
-    $purview['18_lead_manage']       = 'lead_manage';
-    $purview['banner_mobile']        = 'banner_mobile';
-    $purview['lead']                 = 'lead';
-    $purview['mobile_setting']       = 'mobile_setting';
-    $purview['h5_setting']           = 'h5_setting';
-    $purview['wxa_setting']          = 'wxa_setting';
-    $purview['leancloud']            = 'leancloud';
+//    $purview['18_lead_manage']       = 'lead_manage';
+//    $purview['banner_mobile']        = 'banner_mobile';
+//    $purview['lead']                 = 'lead';
+//    $purview['mobile_setting']       = 'mobile_setting';
+//    $purview['h5_setting']           = 'h5_setting';
+//    $purview['wxa_setting']          = 'wxa_setting';
+//    $purview['leancloud']            = 'leancloud';    $purview['18_lead_manage']       = 'lead_manage';
+//    $purview['banner_mobile']        = 'banner_mobile';
+//    $purview['lead']                 = 'lead';
+//    $purview['mobile_setting']       = 'mobile_setting';
+//    $purview['h5_setting']           = 'h5_setting';
+//    $purview['wxa_setting']          = 'wxa_setting';
+//    $purview['leancloud']            = 'leancloud';
 
 ?>
