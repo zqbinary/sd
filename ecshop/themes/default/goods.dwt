@@ -114,8 +114,8 @@ function reg(str){
             </li>
             </li>
             <li class="clearfix">
+              <!-- {if $cfg.show_marketprice} 市场价格-->
                 <dd>
-                  <!-- {if $cfg.show_marketprice} 市场价格-->
                   <strong>{$lang.market_price}</strong><font class="market">{$goods.market_price}</font>
                 </dd>
                 <!-- {/if} -->
@@ -125,7 +125,7 @@ function reg(str){
                 <dd><strong>{$rank_price.rank_name}：</strong><font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font> </dd>
                 <!--{/foreach}-->
             </li>
-            <!--{if $volume_price_list } -->
+            <!--{if false && $volume_price_list } -->
             <li class="padd"> <font class="f1">{$lang.volume_price}</font><br />
               <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#aad6ff">
                 <tr>
