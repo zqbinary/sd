@@ -756,12 +756,13 @@ class Goods extends BaseModel
             $product_info = json_encode(array('product_number' => '', 'product_id' => 0));
             $product_info = json_decode($product_info);
         }
+        //zqbinay
         /* 检查：库存 */
         //检查：商品购买数量是否大于总库存
-        if ($amount > $good['goods_number'])
-        {
-            return self::formatError(self::BAD_REQUEST,trans('message.good.out_storage'));
-        }
+//        if ($amount > $good['goods_number'])
+//        {
+//            return self::formatError(self::BAD_REQUEST,trans('message.good.out_storage'));
+//        }
         //商品存在规格 是货品 检查该货品库存
         if (Attribute::is_property($property) && !empty($prod))
         {
