@@ -287,12 +287,12 @@
 			var express = $scope.express;
 
 			if (!consignee) {
-				$scope.toast('请填写地址')
+				$scope.toast('未填写地址')
 				return;
 			}
 
 			if (!express) {
-				$scope.toast('请选择快递')
+				$scope.toast('未选择快递')
 				return;
 			}
 

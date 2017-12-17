@@ -178,7 +178,8 @@ class Shipping extends BaseModel
     {
         $price['first'] = 0;
         $price['step'] = 0;
-
+        //zqbinary 先把运费写死
+        return $price;
 
         $configure = self::getConfigure($this->configure);
 
@@ -204,7 +205,9 @@ class Shipping extends BaseModel
         $weight = 0;
         $amount = 0;
         $number = 0;
-	$fee    = 0;
+	    $fee    = 0;
+        //zqbinary 先把运费写死
+        return $fee;
 
 	$goods_ids = array();
 
