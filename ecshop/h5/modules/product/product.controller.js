@@ -285,9 +285,12 @@
       function _checkCanPurchase() {
         var product = $scope.product;
         var required = false;
+          return true;
 
-        if ( !product || !product.good_stock )
-          return false;
+        //zbb
+        if ( false && (!product || !product.good_stock )) {
+            return false;
+        }
 
         for ( var i in  product.properties ) {
           if ( !product.properties[i].is_multiselect ) {
@@ -300,7 +303,7 @@
           if ( !$scope.currentAttrs || !$scope.currentAttrs.length ) {
             return false;
           }
-          if ( !$scope.currentStock ) {
+          if ( false && !$scope.currentStock ) {
             return false;
           }
         }

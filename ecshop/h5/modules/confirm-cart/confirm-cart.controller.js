@@ -147,16 +147,16 @@
 				return;
 			}
 
-			if (!express) {
-				$scope.toast('请选择快递')
-				return;
-			}
+			// if (!express) {
+			// 	$scope.toast('请选择快递')
+			// 	return;
+			// }
 
 			var params = {
 				shop: 1,
 				consignee: consignee ? consignee.id : null,
 				cart_good_id: goodsIds ? JSON.stringify(goodsIds) : null,
-				shipping: express ? express.id : null,
+				shipping: express ? express.id : 1,
 				invoice_type: invoiceType ? invoiceType.id : null,
 				invoice_title: invoiceTitle,
 				invoice_content: invoiceContent ? invoiceContent.id : null,
@@ -182,12 +182,20 @@
 		}
 
 		function _checkCanPurchase() {
-			if (!$scope.goods || !$scope.goods.length)
-				return false;
-			if (!$scope.consignee)
-				return false;
-			if (!$scope.express)
-				return false;
+
+            if (!$scope.goods || !$scope.goods.length) {
+                return false;
+            }
+            //zbb 先检验在查看地址的垃圾
+            return true;
+
+            if (!$scope.consignee) {
+                return false;
+            }
+            //zbb
+            // if (false && !$scope.express) {
+            //     return true;
+            // }
 
 			return true;
 		}
