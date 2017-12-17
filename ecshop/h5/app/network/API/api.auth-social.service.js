@@ -15,7 +15,7 @@
         return service;
 
         function _social( params ) {
-            return this.fetch( '/v2/ecapi.auth.social', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.auth.social', params, false, function(res){
                 if ( res.data && ENUM.ERROR_CODE.OK == res.data.error_code ) {
                     if ( res.data.token && res.data.user ) {
                         AppAuthenticationService.setCredentials( res.data.token, res.data.user );

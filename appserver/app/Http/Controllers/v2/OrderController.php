@@ -11,7 +11,7 @@ use App\Models\v2\Features;
 class OrderController extends Controller
 {
     /**
-     * POST /ecapi.order.list
+     * POST /sdtapi.order.list
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.get
+     * POST /sdtapi.order.get
      */
     public function view()
     {
@@ -47,7 +47,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.confirm
+     * POST /sdtapi.order.confirm
      */
     public function confirm()
     {
@@ -64,7 +64,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.cancel
+     * POST /sdtapi.order.cancel
      */
     public function cancel()
     {
@@ -82,7 +82,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.price
+     * POST /sdtapi.order.price
      */
     public function price()
     {
@@ -105,7 +105,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.review
+     * POST /sdtapi.order.review
      */
     public function review()
     {
@@ -136,7 +136,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.payment.types.list
+     * POST /sdtapi.payment.types.list
      */
     public function paymentList()
     {
@@ -153,7 +153,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.payment.pay
+     * POST /sdtapi.payment.pay
      */
     public function pay()
     {
@@ -190,7 +190,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.reason.list
+     * POST /sdtapi.order.reason.list
      */
     public function reasonList()
     {
@@ -198,7 +198,7 @@ class OrderController extends Controller
     }
 
     /**
-     * POST /ecapi.order.subtotal
+     * POST /sdtapi.order.subtotal
      */
     public function subtotal()
     {

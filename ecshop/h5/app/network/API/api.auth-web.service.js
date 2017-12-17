@@ -15,7 +15,7 @@
         return service;
 
         function _web( params ) {
-            // return this.fetch( '/v2/ecapi.auth.web', params, false, function(res){
+            // return this.fetch( '/v2/sdtapi.auth.web', params, false, function(res){
             //     AppAuthenticationService.setCredentials( res.data.token, res.data.user );
             //     return res.data.user;
             // });

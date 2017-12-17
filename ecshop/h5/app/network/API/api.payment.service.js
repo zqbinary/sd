@@ -17,13 +17,13 @@
         return service;
 
         function _pay( params ) {
-            return this.fetch( '/v2/ecapi.payment.pay', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.payment.pay', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res : null;
             });
         }
 
         function _typeList(params) {
-            return this.fetch( '/v2/ecapi.payment.types.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.payment.types.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.payment_types : null;
             });
         }

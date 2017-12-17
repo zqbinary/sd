@@ -17,25 +17,25 @@
         return service;
 
         function _profileGet(params) {
-            return this.fetch( '/v2/ecapi.user.profile.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.user.profile.get', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.user : null;
             });
         }
 
         function _profileFields(params) {
-            return this.fetch( '/v2/ecapi.user.profile.fields', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.user.profile.fields', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.signup_field : null;
             });
         }
 
         function _profileUpdate(params) {
-            return this.fetch( '/v2/ecapi.user.profile.update', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.user.profile.update', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.user : null;
             });
         }
 
         function _passwordUpdate(params) {
-            return this.fetch( '/v2/ecapi.user.password.update', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.user.password.update', params, false, function(res){
             	return res;
             });
         }

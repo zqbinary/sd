@@ -10,7 +10,7 @@ use App\Models\v2\ArticleCategory;
 class ArticleController extends Controller
 {
     /**
-    * POST ecapi.article.list
+    * POST sdtapi.article.list
     */
     public function index(Request $request)
     {

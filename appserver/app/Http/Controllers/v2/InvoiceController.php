@@ -9,7 +9,7 @@ use App\Models\v2\Invoice;
 class InvoiceController extends Controller {
 
     /**
-    * POST ecapi.invoice.type.list
+    * POST sdtapi.invoice.type.list
     */
     public function type(Request $request)
     {
@@ -18,7 +18,7 @@ class InvoiceController extends Controller {
     }
 
     /**
-    * POST ecapi.invoice.content.list
+    * POST sdtapi.invoice.content.list
     */
     public function content(Request $request)
     {
@@ -27,7 +27,7 @@ class InvoiceController extends Controller {
     }
 
     /**
-    * POST ecapi.invoice.status.get
+    * POST sdtapi.invoice.status.get
     */
     public function status(Request $request)
     {

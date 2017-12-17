@@ -18,31 +18,31 @@
         return service;
 
         function _list( params ) {
-            return this.fetch( '/v2/ecapi.consignee.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.consignee.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.consignees : null;
             });
         }
 
         function _add( params ) {
-            return this.fetch( '/v2/ecapi.consignee.add', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.consignee.add', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.consignee : null;
             });
         }
 
         function _delete( params ) {
-            return this.fetch( '/v2/ecapi.consignee.delete', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.consignee.delete', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? true : false;
             });
         }
 
         function _update( params ) {
-            return this.fetch( '/v2/ecapi.consignee.update', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.consignee.update', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? true : false;
             });
         }
 
         function _setDefault( params ) {
-            return this.fetch( '/v2/ecapi.consignee.setDefault', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.consignee.setDefault', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? true : false;
             });
         }

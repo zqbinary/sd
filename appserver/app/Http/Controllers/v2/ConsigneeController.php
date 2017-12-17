@@ -11,7 +11,7 @@ use App\Helper\Token;
 class ConsigneeController extends Controller {
 
     /**
-    * POST ecapi.consignee.list
+    * POST sdtapi.consignee.list
     */
     public function index(Request $request)
     {
@@ -20,7 +20,7 @@ class ConsigneeController extends Controller {
     }
 
     /**
-    * POST ecapi.consignee.add
+    * POST sdtapi.consignee.add
     */
     public function add(Request $request)
     {
@@ -43,7 +43,7 @@ class ConsigneeController extends Controller {
     }
 
     /**
-    * POST ecapi.consignee.delete
+    * POST sdtapi.consignee.delete
     */
     public function remove(Request $request)
     {
@@ -60,7 +60,7 @@ class ConsigneeController extends Controller {
     }
 
     /**
-    * POST ecapi.consignee.update
+    * POST sdtapi.consignee.update
     */
     public function modify(Request $request)
     {
@@ -86,7 +86,7 @@ class ConsigneeController extends Controller {
     }
 
     /**
-    * POST ecapi.consignee.setDefault
+    * POST sdtapi.consignee.setDefault
     */
     public function setDefault(Request $request)
     {

@@ -9,7 +9,7 @@ use App\Models\v2\AreaCode;
 class AreaCodeController extends Controller
 {
     /**
-    * POST ecapi.areacode.list
+    * POST sdtapi.areacode.list
     */
     public function index(Request $request)
     {

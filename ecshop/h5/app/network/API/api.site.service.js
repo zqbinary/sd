@@ -14,7 +14,7 @@
         return service;
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.site.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.site.get', params, false, function(res){
                 return res.data&&res.data.site_info ? res.data.site_info : null;
             });
         }

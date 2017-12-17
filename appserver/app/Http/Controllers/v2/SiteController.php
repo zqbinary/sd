@@ -9,7 +9,7 @@ use App\Models\v2\ShopConfig;
 
 class SiteController extends Controller
 {
-    //POST  ecapi.site.get
+    //POST  sdtapi.site.get
     public function index()
     {
        return $this->json(ShopConfig::getSiteInfo());

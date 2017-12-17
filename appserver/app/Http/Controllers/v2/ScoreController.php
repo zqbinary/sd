@@ -11,7 +11,7 @@ use App\Models\v2\AccountLog;
 class ScoreController extends Controller {
 
     /**
-    * POST ecapi.score.get
+    * POST sdtapi.score.get
     */
     public function view(Request $request)
     {
@@ -25,7 +25,7 @@ class ScoreController extends Controller {
     }
 
     /**
-    * POST ecapi.score.history.list
+    * POST sdtapi.score.history.list
     */
     public function history(Request $request)
     {

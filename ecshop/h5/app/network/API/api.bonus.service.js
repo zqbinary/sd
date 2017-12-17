@@ -18,13 +18,13 @@
         return service;
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.recommend.bonus.info', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.recommend.bonus.info', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.bonus_info : null;
             });
         }
 
         function _list(params) {
-            return this.fetch( '/v2/ecapi.recommend.bonus.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.recommend.bonus.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.bonues : null;
             });
         }

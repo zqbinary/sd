@@ -16,7 +16,7 @@
         return service;
 
         function _signin( params ) {
-            return this.fetch( '/v2/ecapi.auth.signin', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.auth.signin', params, false, function(res){
                 if ( res.data && ENUM.ERROR_CODE.OK == res.data.error_code ) {
                     if ( res.data.token && res.data.user ) {
                         AppAuthenticationService.setCredentials( res.data.token, res.data.user );

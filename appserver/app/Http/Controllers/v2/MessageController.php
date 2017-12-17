@@ -10,7 +10,7 @@ use App\Models\v2\Device;
 class MessageController extends Controller {
 
     /**
-    * POST ecapi.message.system.list
+    * POST sdtapi.message.system.list
     */
     public function system(Request $request)
     {
@@ -29,7 +29,7 @@ class MessageController extends Controller {
     }
 
     /**
-    * POST ecapi.message.order.list
+    * POST sdtapi.message.order.list
     */
     public function order(Request $request)
     {
@@ -48,7 +48,7 @@ class MessageController extends Controller {
     }
 
     /**
-    * POST ecapi.message.unread
+    * POST sdtapi.message.unread
     */
     public function unread(Request $request)
     {
@@ -67,7 +67,7 @@ class MessageController extends Controller {
     }
 
     /**
-    * POST ecapi.push.update
+    * POST sdtapi.push.update
     */
     public function updateDeviceId(Request $request)
     {

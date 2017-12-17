@@ -16,19 +16,19 @@
         return service;
 
         function _systemList(params) {
-            return this.fetch( '/v2/ecapi.message.system.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.message.system.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.messages : null;
             });
         }
 
         function _orderList(params) {
-            return this.fetch( '/v2/ecapi.message.order.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.message.order.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.messages : null;
             });
         }
 
         function _count(params) {
-            return this.fetch( '/v2/ecapi.message.count', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.message.count', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.count : 0;
             });
         }

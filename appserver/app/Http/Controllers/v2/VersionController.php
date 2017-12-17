@@ -9,7 +9,7 @@ use App\Models\v2\Version;
 class VersionController extends Controller
 {
     /**
-     * POST ecapi.version.check
+     * POST sdtapi.version.check
      */
     public function check(Request $request)
     {

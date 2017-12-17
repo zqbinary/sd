@@ -14,7 +14,7 @@
         return service;
 
         function _check(params) {
-            return this.fetch( '/v2/ecapi.version.check', params, true, function(res){
+            return this.fetch( '/v2/sdtapi.version.check', params, true, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.version_info : null;
             });
         }

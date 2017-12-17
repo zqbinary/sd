@@ -22,57 +22,57 @@
         return service;
 
         function _list(params) {
-            return this.fetch( '/v2/ecapi.product.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.list', params, false, function(res){
                     return (res.data &&(ENUM.ERROR_CODE.OK == res.data.error_code)) ? res.data.products : null;
 
             });
         }
 
         function _homeList(params){
-            return this.fetch( '/v2/ecapi.home.product.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.home.product.list', params, false, function(res){
                     return (res.data &&(ENUM.ERROR_CODE.OK == res.data.error_code)) ? res.data : null;
 
             });            
         }
 
         function _accessoryList(params) {
-            return this.fetch( '/v2/ecapi.product.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.products : null;
             });
         }
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.product.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.get', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.product : null;
             });
         }
 
         function _like(params) {
-            return this.fetch( '/v2/ecapi.product.like', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.like', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.is_liked : true;
             });
         }
 
         function _unlike(params) {
-            return this.fetch( '/v2/ecapi.product.unlike', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.unlike', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.is_liked : false;
             });
         }
 
         function _likedList(params) {
-            return this.fetch( '/v2/ecapi.product.liked.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.liked.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.products : null;
             });
         }
 
         function _validate(params) {
-            return this.fetch( '/v2/ecapi.product.validate', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.validate', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.is_valid : false;
             });
         }
 
         function _purchase(params) {
-            return this.fetch( '/v2/ecapi.product.purchase', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.product.purchase', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.order : null;
             });
         }

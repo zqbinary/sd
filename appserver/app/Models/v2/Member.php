@@ -517,7 +517,7 @@ class Member extends BaseModel {
                 }
 
                 $wechat = new Wechat($config['app_id'], $config['app_secret']);
-                return $wechat->getWeChatAuthorizeURL(url('/v2/ecapi.auth.web.callback/'.self::VENDOR_WEIXIN.'/?referer='.$referer.'&scope='.$scope),$scope);
+                return $wechat->getWeChatAuthorizeURL(url('/v2/sdtapi.auth.web.callback/'.self::VENDOR_WEIXIN.'/?referer='.$referer.'&scope='.$scope),$scope);
                 break;
 
             case self::VENDOR_WEIBO:
@@ -537,7 +537,7 @@ class Member extends BaseModel {
 
                 $qc = new Qc($config['app_id'], $config['app_secret']);
 
-                $res = $qc->login(url('/v2/ecapi.auth.web.callback/'.self::VENDOR_QQ.'/?referer='.$referer), 'get_user_info');               
+                $res = $qc->login(url('/v2/sdtapi.auth.web.callback/'.self::VENDOR_QQ.'/?referer='.$referer), 'get_user_info');               
 
                 return $res;
                 
@@ -627,7 +627,7 @@ class Member extends BaseModel {
                 
                 $qc = new Qc($config['app_id'], $config['app_secret']);
 
-                $access_token = $qc->get_access_token(url('/v2/ecapi.auth.web.callback/'.self::VENDOR_QQ)); // 
+                $access_token = $qc->get_access_token(url('/v2/sdtapi.auth.web.callback/'.self::VENDOR_QQ)); // 
 
                 $open_id = $qc->get_openid($access_token); // open_id
 

@@ -15,7 +15,7 @@
         return service;
 
         function _list( params ) {
-            return this.fetch( '/v2/ecapi.article.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.article.list', params, false, function(res){
                 return (res.data &&(ENUM.ERROR_CODE.OK == res.data.error_code)) ? res.data : null;
             });
         }

@@ -9,7 +9,7 @@ use App\Models\v2\Coupon;
 
 class CouponController extends Controller
 {
-    //POST  ecapi.coupon.list
+    //POST  sdtapi.coupon.list
     public function index()
     {
         $rules = [
@@ -35,7 +35,7 @@ class CouponController extends Controller
        return $this->json($model);
     }
 
-    //POST  ecapi.coupon.available
+    //POST  sdtapi.coupon.available
     public function available()
     {
         $rules = [

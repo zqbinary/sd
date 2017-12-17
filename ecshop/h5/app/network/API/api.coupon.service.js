@@ -15,13 +15,13 @@
         return service;
 
         function _list( params ) {
-            return this.fetch( '/v2/ecapi.coupon.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.coupon.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.coupons : null;
             });
         }
 
         function _available( params ) {
-            return this.fetch( '/v2/ecapi.coupon.available', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.coupon.available', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.coupons : null;
             });
         }

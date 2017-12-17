@@ -14,7 +14,7 @@
         return service;
 
         function _get( params ) {
-            return this.fetch( '/v2/ecapi.config.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.config.get', params, false, function(res){
                 if ( ENUM.ERROR_CODE.OK == res.data.error_code ) {
 
                     if(GLOBAL_CONFIG.ENCRYPTED){

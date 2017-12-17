@@ -177,9 +177,9 @@
                     }
 
                     var headers = response.headers();
-                    var ErrorCode = parseInt(headers['x-ecapi-errorcode']);
-                    var ErrorDesc = headers['x-ecapi-errordesc'];
-                    var NewAuthorization = headers['x-ecapi-new-authorization'];
+                    var ErrorCode = parseInt(headers['x-sdtapi-errorcode']);
+                    var ErrorDesc = headers['x-sdtapi-errordesc'];
+                    var NewAuthorization = headers['x-sdtapi-new-authorization'];
                     if ( GLOBAL_CONFIG.ENCRYPTED) {
                         if (response.data && response.data.data) {
                             var raw = XXTEA.decryptFromBase64(response.data.data, xxtea_key);

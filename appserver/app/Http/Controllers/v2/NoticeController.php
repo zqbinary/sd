@@ -10,7 +10,7 @@ use App\Models\v2\Notice;
 class NoticeController extends Controller {
 
     /**
-    * POST ecapi.notice.list
+    * POST sdtapi.notice.list
     */
     public function index(Request $request)
     {

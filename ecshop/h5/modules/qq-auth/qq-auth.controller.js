@@ -15,7 +15,7 @@
 
 		var callbackUrl = encodeURIComponent($window.location.protocol+"//"+$window.location.host+$window.location.pathname);
 
-		var locationRef = GLOBAL_CONFIG.API_HOST + "/v2/ecapi.auth.web?vendor=3"+"&referer=" + callbackUrl;
+		var locationRef = GLOBAL_CONFIG.API_HOST + "/v2/sdtapi.auth.web?vendor=3"+"&referer=" + callbackUrl;
 
 		$window.location.href = locationRef;
 	}

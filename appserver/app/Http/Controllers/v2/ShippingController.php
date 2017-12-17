@@ -9,7 +9,7 @@ use App\Models\v2\Features;
 class ShippingController extends Controller
 {
     /**
-     * POST ecapi.shipping.vendor.list
+     * POST sdtapi.shipping.vendor.list
      */
     public function index()
     {
@@ -29,7 +29,7 @@ class ShippingController extends Controller
     }
 
     /**
-     * POST ecapi.shipping.status.get
+     * POST sdtapi.shipping.status.get
      */
     public function info()
     {

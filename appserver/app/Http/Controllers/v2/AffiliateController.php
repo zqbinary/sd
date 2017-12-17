@@ -9,7 +9,7 @@ use App\Models\v2\AffiliateLog;
 class AffiliateController extends Controller {
 
     /**
-    * POST ecapi.recommend.affiliate.list
+    * POST sdtapi.recommend.affiliate.list
     */
     public function index(Request $request)
     {
@@ -26,7 +26,7 @@ class AffiliateController extends Controller {
     }
 
     /**
-    * POST ecapi.recommend.affiliate.info
+    * POST sdtapi.recommend.affiliate.info
     */
     public function info(Request $request)
     {

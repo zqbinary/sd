@@ -18,19 +18,19 @@
         return service;
 
         function _send( params ) {
-	        return this.fetch( '/v2/ecapi.auth.mobile.send', params, false, function(res){
+	        return this.fetch( '/v2/sdtapi.auth.mobile.send', params, false, function(res){
                 return res;
             });
         }
 
         function _verify( params ) {
-            return this.fetch( '/v2/ecapi.auth.mobile.verify', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.auth.mobile.verify', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? true : false;
             });
         }
 
         function _signup( params ) {
-            return this.fetch( '/v2/ecapi.auth.mobile.signup', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.auth.mobile.signup', params, false, function(res){
                 if ( res.data && ENUM.ERROR_CODE.OK == res.data.error_code ) {
                     if ( res.data.token && res.data.user ) {
                         AppAuthenticationService.setCredentials( res.data.token, res.data.user );
@@ -41,7 +41,7 @@
         }
 
         function _reset( params ) {
-            return this.fetch( '/v2/ecapi.auth.mobile.reset', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.auth.mobile.reset', params, false, function(res){
                 return res;
             });
         }

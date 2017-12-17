@@ -15,7 +15,7 @@
         return service;
 
         function _list( params ) {
-            return this.fetch( '/v2/ecapi.areacode.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.areacode.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.area_code : null;
             });
         }

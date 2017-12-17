@@ -11,7 +11,7 @@ use App\Helper\Token;
 class CartController extends Controller {
 
     /**
-     * POST ecapi.cart.add
+     * POST sdtapi.cart.add
      */
     public function add(Request $request)
     {
@@ -32,7 +32,7 @@ class CartController extends Controller {
     }
 
     /**
-     * POST ecapi.cart.delete
+     * POST sdtapi.cart.delete
      */
 
     public function delete(Request $request)
@@ -67,7 +67,7 @@ class CartController extends Controller {
     }
 
     /**
-     * POST ecapi.cart.get
+     * POST sdtapi.cart.get
      */
 
     public function index(Request $request)
@@ -78,7 +78,7 @@ class CartController extends Controller {
 
 
     /**
-     * POST ecapi.cart.clear
+     * POST sdtapi.cart.clear
      */
 
     public function clear(Request $request)

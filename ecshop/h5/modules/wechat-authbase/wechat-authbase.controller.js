@@ -17,7 +17,7 @@
 
 		var scope = "snsapi_base";
 
-		var locationRef = GLOBAL_CONFIG.API_HOST + "/v2/ecapi.auth.web?vendor=1"+"&scope="+scope+"&referer=" + callbackUrl;
+		var locationRef = GLOBAL_CONFIG.API_HOST + "/v2/sdtapi.auth.web?vendor=1"+"&scope="+scope+"&referer=" + callbackUrl;
 
 		$window.location.href = locationRef;
 	}

@@ -12,7 +12,7 @@ use App\Helper\Token;
 class CashGiftController extends Controller {
 
     /**
-    * POST ecapi.cashgift.list
+    * POST sdtapi.cashgift.list
     */
     public function index(Request $request)
     {
@@ -37,7 +37,7 @@ class CashGiftController extends Controller {
     }
 
     /**
-    * POST ecapi.cashgift.available
+    * POST sdtapi.cashgift.available
     */
     public function available(Request $request)
     {

@@ -15,13 +15,13 @@
         return service;
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.score.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.score.get', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data : null;
             });
         }
 
         function _historyList(params) {
-            return this.fetch( '/v2/ecapi.score.history.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.score.history.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.history : null;
             });
         }

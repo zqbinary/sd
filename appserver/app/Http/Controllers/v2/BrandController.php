@@ -9,7 +9,7 @@ use App\Models\v2\Brand;
 class BrandController extends Controller {
 
     /**
-    * POST ecapi.brand.list
+    * POST sdtapi.brand.list
     */
     public function index(Request $request)
     {
@@ -28,7 +28,7 @@ class BrandController extends Controller {
     }
 
     /**
-    * POST ecapi.recommend.brand.list
+    * POST sdtapi.recommend.brand.list
     */
     public function recommend(Request $request)
     {

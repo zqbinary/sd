@@ -11,7 +11,7 @@ use App\Models\v2\Account;
 class AccountController extends Controller {
 
     /**
-    * POST ecapi.withdraw.list
+    * POST sdtapi.withdraw.list
     */
     public function index(Request $request)
     {
@@ -28,7 +28,7 @@ class AccountController extends Controller {
     }
 
     /**
-    * POST ecapi.withdraw.info
+    * POST sdtapi.withdraw.info
     */
     public function getDetail(Request $request)
     {
@@ -44,7 +44,7 @@ class AccountController extends Controller {
     }
 
     /**
-    * POST ecapi.withdraw.submit
+    * POST sdtapi.withdraw.submit
     */
     public function submit()
     {
@@ -62,7 +62,7 @@ class AccountController extends Controller {
     }
 
     /**
-    * POST ecapi.withdraw.cancel
+    * POST sdtapi.withdraw.cancel
     */
     public function cancel(Request $request)
     {
@@ -79,7 +79,7 @@ class AccountController extends Controller {
     }
 
     /**
-     * POST ecapi.balance.total
+     * POST sdtapi.balance.total
      */
     public function surplus(Request $request)
     {
@@ -89,7 +89,7 @@ class AccountController extends Controller {
     }
     
     /**
-     * POST ecapi.balance.list
+     * POST sdtapi.balance.list
      */
     public function accountDetail()
     {

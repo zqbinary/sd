@@ -9,7 +9,7 @@ use App\Models\v2\Banner;
 class BannerController extends Controller {
 
     /**
-    * POST ecapi.banner.list
+    * POST sdtapi.banner.list
     */
     public function index(Request $request)
     {

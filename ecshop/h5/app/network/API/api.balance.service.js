@@ -18,13 +18,13 @@
         return service;
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.balance.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.balance.get', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.amount : null;
             });
         }
 
         function _list(params) {
-            return this.fetch( '/v2/ecapi.balance.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.balance.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.balances : null;
             });
         }

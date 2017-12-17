@@ -233,7 +233,7 @@ class UserController extends Controller
     }
 
     /**
-     * POST /ecapi.user.profile.fields
+     * POST /sdtapi.user.profile.fields
      */
     public function fields()
     {
@@ -263,7 +263,7 @@ class UserController extends Controller
         return redirect($data);
     }
     /**
-     * GET /ecapi.auth.web.callback/:vendor
+     * GET /sdtapi.auth.web.callback/:vendor
      */
      public function webCallback($vendor)
      {

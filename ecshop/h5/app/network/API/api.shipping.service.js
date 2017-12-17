@@ -15,13 +15,13 @@
 		return service;
 
 		function _vendorList(params) {
-			return this.fetch('/v2/ecapi.shipping.vendor.list', params, false, function (res) {
+			return this.fetch('/v2/sdtapi.shipping.vendor.list', params, false, function (res) {
 				return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.vendors : null;
 			});
 		}
 
 		function _statusGet(params) {
-			return this.fetch('/v2/ecapi.shipping.status.get', params, false, function (res) {
+			return this.fetch('/v2/sdtapi.shipping.status.get', params, false, function (res) {
 				return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data : null;
 			});
 		}

@@ -16,13 +16,13 @@
         return service;
 
         function _preview( params ) {
-            return this.fetch( '/v2/ecapi.cardpage.preview', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.cardpage.preview', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.cardpage : null;
             });
         }
 
         function _get( params ) {
-            return this.fetch( '/v2/ecapi.cardpage.get', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.cardpage.get', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.cardpage : null;
             });
         }

@@ -17,7 +17,7 @@ use Log;
 class GoodsController extends Controller
 {
     /**
-     * POST /ecapi.home.product.list
+     * POST /sdtapi.home.product.list
      */
     public function home()
     {
@@ -27,7 +27,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * POST /ecapi.product.list
+     * POST /sdtapi.product.list
      */
     public function index()
     {
@@ -52,7 +52,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * POST /ecapi.search.product.list
+     * POST /sdtapi.search.product.list
      */
     public function search()
     {
@@ -77,7 +77,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * POST /ecapi.product.like
+     * POST /sdtapi.product.like
      */
     public function setLike()
     {
@@ -95,7 +95,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * POST /ecapi.product.unlike
+     * POST /sdtapi.product.unlike
      */
     public function setUnlike()
     {
@@ -113,7 +113,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * POST /ecapi.product.liked.list
+     * POST /sdtapi.product.liked.list
      */
     public function likedList()
     {

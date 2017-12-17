@@ -20,25 +20,25 @@
         return service;
 
         function _get(params) {
-            return this.fetch( '/v2/ecapi.withdraw.info', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.withdraw.info', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.withdraw : null;
             });
         }
 
         function _cancel(params) {
-            return this.fetch( '/v2/ecapi.withdraw.cancel', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.withdraw.cancel', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.withdraw : null;
             });
         }
 
         function _submit(params) {
-            return this.fetch( '/v2/ecapi.withdraw.submit', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.withdraw.submit', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.withdraw : null;
             });
         }
 
         function _list(params) {
-            return this.fetch( '/v2/ecapi.withdraw.list', params, false, function(res){
+            return this.fetch( '/v2/sdtapi.withdraw.list', params, false, function(res){
                 return ENUM.ERROR_CODE.OK == res.data.error_code ? res.data.withdraws : null;
             });
         }
