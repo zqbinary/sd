@@ -78,7 +78,8 @@ class Cart extends BaseModel
         }
         /* 检查：库存 */
         //检查：商品购买数量是否大于总库存
-        if ($amount > $good['goods_number'])
+        //zbb
+        if (false && $amount > $good['goods_number'])
         {
             return self::formatError(self::BAD_REQUEST,trans('message.good.out_storage'));
         }
