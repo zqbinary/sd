@@ -14,8 +14,8 @@
 
     <div class="app-content">
         <div class="payment-header">
-            <div class="header-title">订单 #{{paymentModel.order.sn}}，请您尽快付款。</div>
-            <div class="header-total">合计：<em>{{paymentModel.order.total | currency:"￥"}}</em></div>
+            <div class="header-title">订单 #{{paymentModel.order.sn}}</div>
+            <div class="header-total">参考合计：<em>{{paymentModel.order.total | currency:"￥"}}</em></div>
         </div>
         <div class="payment-list" ng-if="paymentModel.isLoaded">
             <div class="list-item " ng-class="{active: isSelected(payment)}" ng-repeat="payment in paymentModel.types track by $index" ng-click="touchSelect(payment)">
