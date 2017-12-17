@@ -4,7 +4,7 @@ return [
     
     'debug' => env('APP_DEBUG', false),
     
-    'name' => env('APP_NAME', 'ECAPI'),
+    'name' => env('APP_NAME', 'SDTAPI'),
 
     'shop_url' => env('SHOP_URL', ''),
 

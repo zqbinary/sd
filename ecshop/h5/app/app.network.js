@@ -91,15 +91,15 @@
                 request: function (config) {
                     $rootScope.activeCalls += 1;
 
-                    //config.headers['X-ECAPI-UserAgent'] = 'Platform/Wechat, Device/Webview';
-                    config.headers['X-ECAPI-UserAgent'] = 'Platform/Wechat';
-                    config.headers['X-ECAPI-UDID']      = null;
-                    config.headers['X-ECAPI-Ver']       = "1.1.0";
-                    config.headers['X-ECAPI-Sign']      = null;
+                    //config.headers['X-SDTAPI-UserAgent'] = 'Platform/Wechat, Device/Webview';
+                    config.headers['X-SDTAPI-UserAgent'] = 'Platform/Wechat';
+                    config.headers['X-SDTAPI-UDID']      = null;
+                    config.headers['X-SDTAPI-Ver']       = "1.1.0";
+                    config.headers['X-SDTAPI-Sign']      = null;
 
                     var token = AppAuthenticationService.getToken();
                     if ( token ) {
-                        config.headers['X-ECAPI-Authorization'] = token;
+                        config.headers['X-SDTAPI-Authorization'] = token;
                     }
 
                     if (GLOBAL_CONFIG.DEBUG) {
@@ -147,7 +147,7 @@
 
                         var sign = signData.toString(CryptoJS.enc.Hex);
 
-                        config.headers["X-ECAPI-Sign"] = sign + "," + timestamp;
+                        config.headers["X-SDTAPI-Sign"] = sign + "," + timestamp;
 
                         if(encryptedData && encryptedData.length > 0){
                             config.data = {
