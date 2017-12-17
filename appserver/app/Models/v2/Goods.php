@@ -836,8 +836,9 @@ class Goods extends BaseModel
         if ($user_id > 0)
         {
             $user_info = Member::user_info($user_id);
-
-            $order['surplus'] = min($order['surplus'], $user_info['user_money'] + $user_info['credit_line']);
+            //zqbinary 取余额支付
+//            $order['surplus'] = min($order['surplus'], $user_info['user_money'] + $user_info['credit_line']);
+            $order['surplus'] = $user_info['user_money'] + $user_info['credit_line'];
             if ($order['surplus'] < 0)
             {
                 $order['surplus'] = 0;
@@ -855,7 +856,8 @@ class Goods extends BaseModel
             
             $user_points = $user_info['pay_points']; // 用户的积分总数
 
-            $order['integral'] = min($order['integral'], $user_points, $flow_points);
+            //zqbinary 取余额支付
+            $order['integral'] = $order['integral'];
 
             if ($order['integral'] < 0)
             {
@@ -962,14 +964,15 @@ class Goods extends BaseModel
 
         $order['order_amount']  = number_format($total['amount'], 2, '.', '');
 
+        //zqbinary
         /* 如果订单金额为0（使用余额或积分或红包支付），修改订单状态为已确认、已付款 */
-        if ($order['order_amount'] <= 0)
+        if (true || $order['order_amount'] <= 0)
         {
             $order['order_status'] = Order::OS_CONFIRMED;
             $order['confirm_time'] = time();
             $order['pay_status']   = Order::PS_PAYED;
             $order['pay_time']     = time();
-            $order['order_amount'] = 0;
+//            $order['order_amount'] = 0;
         }
 
          $order['integral_money']   = $total['integral_money'];
@@ -1019,7 +1022,6 @@ class Goods extends BaseModel
             $order_good->save();
 
         /* 修改拍卖活动状态 */
-
         /* 处理余额、积分、红包 */
         if ($order['user_id'] > 0 && $order['integral'] > 0)
         {
