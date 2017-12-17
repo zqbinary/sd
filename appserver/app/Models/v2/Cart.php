@@ -291,9 +291,9 @@ class Cart extends BaseModel
             foreach ($cart_goods_stock['goods_list'] as $value)
             {
                 $_cart_goods_stock[$value['rec_id']] = $value['goods_number'];
-            }           
-
-            if (!self::flow_cart_stock($_cart_goods_stock)) {
+            }
+            //zbb
+            if (false && !self::flow_cart_stock($_cart_goods_stock)) {
                 return self::formatError(self::BAD_REQUEST,trans('message.good.out_storage'));
             }
             
