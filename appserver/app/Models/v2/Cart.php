@@ -496,13 +496,13 @@ class Cart extends BaseModel
         $order['order_amount']  = number_format($total['amount'], 2, '.', '');
 
         /* 如果订单金额为0（使用余额或积分或红包支付），修改订单状态为已确认、已付款 */
-        if ($order['order_amount'] <= 0)
+        if ($order['order_amount'] < ($user_info['user_money'] + $user_info['credit_line']))
         {
             $order['order_status'] = Order::OS_CONFIRMED;
             $order['confirm_time'] = time();
             $order['pay_status']   = Order::PS_PAYED;
             $order['pay_time']     = time();
-            $order['order_amount'] = 0;
+//            $order['order_amount'] = 0;
         }
 
          $order['integral_money']   = $total['integral_money'];

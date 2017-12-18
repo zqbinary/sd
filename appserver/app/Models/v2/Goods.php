@@ -966,7 +966,12 @@ class Goods extends BaseModel
 
         //zqbinary
         /* 如果订单金额为0（使用余额或积分或红包支付），修改订单状态为已确认、已付款 */
-        if (true || $order['order_amount'] <= 0)
+//        if ($order['order_amount'] > ($user_info['user_money'] + $user_info['credit_line']))
+//        {
+//            show_message($_LANG['balance_not_enough']);
+//        }
+
+        if ($order['order_amount'] < ($user_info['user_money'] + $user_info['credit_line']))
         {
             $order['order_status'] = Order::OS_CONFIRMED;
             $order['confirm_time'] = time();
