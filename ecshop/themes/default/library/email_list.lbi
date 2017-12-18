@@ -37,6 +37,9 @@ function rep_cancel_email_list(text)
 }
 function check_email()
 {
+    console.log('xx')
+    return true;
+
   if (Utils.isEmail(email.value))
   {
     return true;
