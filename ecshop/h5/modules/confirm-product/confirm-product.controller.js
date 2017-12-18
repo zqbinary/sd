@@ -291,10 +291,10 @@
 				return;
 			}
 
-			if (!express) {
-				$scope.toast('未选择快递')
-				return;
-			}
+			// if (!express) {
+			// 	$scope.toast('未选择快递')
+			// 	return;
+			// }
 
 			var params = {};
 
@@ -309,9 +309,11 @@
 				params.consignee = $scope.consignee.id;
 			}
 
-			if ($scope.express) {
-				params.shipping = $scope.express.id;
-			}
+			// if ($scope.express) {
+			// 	params.shipping = $scope.express.id;
+			// }
+			//zbb
+			params.shipping = 1;
 
 			if ($scope.cashgift) {
 				params.cashgift = $scope.cashgift.id;
