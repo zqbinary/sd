@@ -1632,7 +1632,7 @@ elseif ($_REQUEST['step'] == 'done')
         }
         if ($order['order_amount'] > ($user_info['user_money'] + $user_info['credit_line']))
         {
-            show_message($_LANG['balance_not_enough']);
+//            show_message($_LANG['balance_not_enough']);
         }
         else
         {
@@ -1641,15 +1641,27 @@ elseif ($_REQUEST['step'] == 'done')
         }
     }
 
-    /* 如果订单金额为0（使用余额或积分或红包支付），修改订单状态为已确认、已付款 */
-    if ($order['order_amount'] <= 0)
+    if ($order['order_amount'] > ($user_info['user_money'] + $user_info['credit_line']))
     {
+//            show_message($_LANG['balance_not_enough']);
         $order['order_status'] = OS_CONFIRMED;
         $order['confirm_time'] = gmtime();
-        $order['pay_status']   = PS_PAYED;
         $order['pay_time']     = gmtime();
-        $order['order_amount'] = 0;
     }
+    else
+    {
+        /* 如果订单金额为0（使用余额或积分或红包支付），修改订单状态为已确认、已付款 */
+//        if ($order['order_amount'] <= 0)
+//        {
+            $order['order_status'] = OS_CONFIRMED;
+            $order['confirm_time'] = gmtime();
+            $order['pay_status']   = PS_PAYED;
+            $order['pay_time']     = gmtime();
+            $order['order_amount'] = 0;
+//        }
+
+    }
+
 
     $order['integral_money']   = $total['integral_money'];
     $order['integral']         = $total['integral'];
