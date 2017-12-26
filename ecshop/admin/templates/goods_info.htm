@@ -643,7 +643,21 @@
       cell1.innerHTML = src.childNodes[0].innerHTML.replace(/(.*)(addSpec)(.*)(\[)(\+)/i, "$1removeSpec$3$4-");
       cell2.innerHTML = src.childNodes[1].innerHTML.replace(/readOnly([^\s|>]*)/i, '');
   }
-
+    function computeSpec(obj) {
+        var attrPrice = obj.value;
+        var src   = obj.previousSibling.previousSibling;
+        var shopPrice = document.getElementsByName('shop_price')[0].value;
+        if(!shopPrice || shopPrice<=0) {
+            alert('请先填写商品价格');
+            return false;
+        }
+        if(attrPrice<=0) {
+            alert('属性价格必须大于0');
+            obj.value = 0;
+            return false;
+        }
+        src.value = attrPrice- shopPrice;
+    }
   /**
    * 鍒犻櫎瑙勬牸鍊
    */

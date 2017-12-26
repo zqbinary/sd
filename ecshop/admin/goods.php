@@ -446,7 +446,8 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit' || $_REQUEST['ac
     $smarty->assign('gd', gd_version());
     $smarty->assign('thumb_width', $_CFG['thumb_width']);
     $smarty->assign('thumb_height', $_CFG['thumb_height']);
-    $smarty->assign('goods_attr_html', build_attr_html($goods['goods_type'], $goods['goods_id']));
+    $goods_attr_html = build_attr_html($goods['goods_type'], $goods['goods_id']);
+    $smarty->assign('goods_attr_html', $goods_attr_html);
     $volume_price_list = '';
     if(isset($_REQUEST['goods_id']))
     {

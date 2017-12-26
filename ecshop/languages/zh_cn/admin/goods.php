@@ -165,7 +165,7 @@ $_LANG['img_url_too_big'] = '商品相册中第%s个图片文件太大了（最�
 
 $_LANG['integral_market_price'] = '取整数';
 $_LANG['upload_images'] = '上传图片';
-$_LANG['spec_price'] = '属性价格';
+$_LANG['spec_price'] = '属性差价';
 $_LANG['drop_img_confirm'] = '您确实要删除该图片吗？';
 
 $_LANG['select_font'] = '字体样式';

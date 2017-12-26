@@ -667,6 +667,8 @@ function get_goods_type_specifications()
  */
 function build_attr_html($cat_id, $goods_id = 0)
 {
+    $sql = 'SELECT shop_price from ' . $GLOBALS['ecs']->table('goods') . ' WHERE goods_id=' . $goods_id;
+    $good = $GLOBALS['db']->getRow($sql);
     $attr = get_attr_list($cat_id, $goods_id);
     $html = '<table width="100%" id="attrTable">';
     $spec = 0;
@@ -709,10 +711,14 @@ function build_attr_html($cat_id, $goods_id = 0)
             }
             $html .= '</select> ';
         }
-
-        $html .= ($val['attr_type'] == 1 || $val['attr_type'] == 2) ?
-            $GLOBALS['_LANG']['spec_price'].' <input type="text" name="attr_price_list[]" value="' . $val['attr_price'] . '" size="5" maxlength="10" />' :
-            ' <input type="hidden" name="attr_price_list[]" value="0" />';
+        if (($val['attr_type'] == 1 || $val['attr_type'] == 2)) {
+            $price_computed = $val['attr_price'] + $good['shop_price'];
+            $price_computed = $price_computed ?: 0;
+            $price_computed_dom = '属性绝对价格: <input value="'.$price_computed.'" onblur="computeSpec(this)"/>';
+            $html .= $GLOBALS['_LANG']['spec_price'] . ' <input type="text" name="attr_price_list[]" value="' . $val['attr_price'] . '" size="5" readOnly maxlength="10" />'.$price_computed_dom;
+        } else {
+            $html .= ' <input type="hidden" name="attr_price_list[]" value="0" />';
+        }
 
         $html .= '</td></tr>';
     }
