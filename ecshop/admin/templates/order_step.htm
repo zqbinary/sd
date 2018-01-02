@@ -32,6 +32,7 @@
     <th scope="col">{$lang.goods_name}</th>
     <th scope="col">{$lang.goods_sn}</th>
     <th scope="col">{$lang.goods_price}</th>
+    <th scope="col">当前价格(折)</th>
     <th scope="col">{$lang.goods_number}</th>
     <th scope="col">{$lang.goods_attr}</th>
     <th scope="col">{$lang.subtotal}</th>
@@ -49,6 +50,8 @@
     <td>{$goods.goods_sn}<input name="rec_id[]" type="hidden" value="{$goods.rec_id}" /></td>
     <td><input name="goods_price[]" type="text" style="text-align:right" value="{$goods.goods_price}" size="10" />
         <input name="goods_id[]" type="hidden" style="text-align:right" value="{$goods.goods_id}" size="10" /></td>
+    <td><span>{$goods.goods_price} * </span>
+      <input name="goods_discount"  value="1" size="10" onblur="return getComputedPrice(this);"/></td>
     <td><input name="goods_number[]" type="text" style="text-align:right" value="{$goods.goods_number}" size="6" /></td>
     <td><textarea name="goods_attr[]" cols="30" rows="{$goods.rows}">{$goods.goods_attr}</textarea></td>
     <td align="right">{$goods.subtotal}</td>
@@ -787,6 +790,22 @@ region.isAdmin=true;
     return true;
   }
 
+  function getComputedPrice(dom)
+  {
+      var discount = dom.value;
+      var price = (dom.parentElement.getElementsByTagName('span')[0]).innerText;
+      price = parseFloat(price);
+      var target = (dom.parentElement.previousElementSibling).getElementsByTagName('input')[0];
+
+      discount = parseFloat(discount) || 1;
+      if(discount<0 ||discount>1) {
+          dom.value = 1;
+          target.value = price;
+          return false;
+      }
+      target.value = (price * discount).toFixed(2);
+      return false;
+  }
   /**
    * 载入收货地址
    * @param int addressId 收货地址id
